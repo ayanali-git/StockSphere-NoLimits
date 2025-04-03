@@ -18,7 +18,7 @@ const SignUp = () => {
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
-
+  
     if (password !== confirmPassword) {
       setError("Passwords do not match");
       return;
@@ -27,10 +27,10 @@ const SignUp = () => {
       setError("You must agree to the Terms of Service");
       return;
     }
-
+  
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      navigate("/login");
+      navigate("/login"); // Redirects to login page after successful signup
     } catch (err: any) {
       setError(err.message);
     }

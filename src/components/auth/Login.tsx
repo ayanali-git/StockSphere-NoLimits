@@ -13,10 +13,10 @@ const Login = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
-
+  
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/");
+      navigate("/"); // Redirects to home page after successful login
     } catch (err: any) {
       setError(err.message);
     }

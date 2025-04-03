@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -63,7 +62,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<ValueType, NameT
     return (
       <div className="bg-background border border-border p-3 rounded-lg shadow-md">
         <p className="font-medium text-sm">{label}</p>
-        <p className="text-primary font-semibold text-base">
+        <p className="text-gray-500 font-semibold text-base">
           {formatCurrency(payload[0].value as number)}
         </p>
       </div>
@@ -93,7 +92,7 @@ const PortfolioChart = () => {
           <div className="flex items-center justify-between">
             <div>
               <CardTitle>Portfolio Performance</CardTitle>
-              <CardDescription>Track the growth of your investments</CardDescription>
+              <CardDescription className="text-gray-400">Track the growth of your investments</CardDescription>
             </div>
             <Tabs value={timeframe} onValueChange={setTimeframe} className="w-fit">
               <TabsList className="grid grid-cols-4 w-fit">
@@ -112,12 +111,12 @@ const PortfolioChart = () => {
                 data={chartData[timeframe as keyof typeof chartData]}
                 margin={{ top: 10, right: 10, left: 10, bottom: 10 }}
               >
-                <CartesianGrid  strokeDasharray="0 0" vertical={false} stroke="#444" />
+                <CartesianGrid strokeDasharray="0 0" vertical={false} stroke="#444" />
                 <XAxis
                   dataKey="date" 
                   axisLine={false} 
                   tickLine={false} 
-                  stroke="#ffffff"
+                  stroke="#808080"
                   fontSize={12}
                   tickMargin={10}
                 />
@@ -125,7 +124,7 @@ const PortfolioChart = () => {
                   domain={['dataMin - 10000', 'dataMax + 10000']}
                   axisLine={false} 
                   tickLine={false} 
-                  stroke="#ffffff"
+                  stroke="#808080"
                   fontSize={12}
                   tickFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}
                   tickMargin={10}
@@ -134,10 +133,15 @@ const PortfolioChart = () => {
                 <Line
                   type="monotone"
                   dataKey="value"
-                  stroke="hsl(var(--primary))"
+                  stroke="#ffffff"
                   strokeWidth={2}
                   dot={false}
-                  activeDot={{ r: 6, fill: "hsl(var(--primary))", stroke: "var(--background)", strokeWidth: 2 }}
+                  activeDot={{ 
+                    r: 6, 
+                    fill: "#ffffff", 
+                    stroke: "var(--background)", 
+                    strokeWidth: 2 
+                  }}
                 />
               </LineChart>
             </ResponsiveContainer>

@@ -1,18 +1,7 @@
-# Welcome to your Lovable project
+# Welcome to my Stock Sphere project
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/07be2953-994d-4352-9732-f639717d71eb
-
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/07be2953-994d-4352-9732-f639717d71eb) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
 
 **Use your preferred IDE**
 

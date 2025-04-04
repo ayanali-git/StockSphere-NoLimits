@@ -37,6 +37,7 @@ const ProtectedRoute = ({ children }) => {
 };
 
 const App = () => {
+  const { currentUser } = useAuth(); // Retrieve currentUser using useAuth
   useEffect(() => {
     // Check for dark mode preference
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -54,15 +55,13 @@ const App = () => {
             <AnimatePresence mode="wait">
               <Routes>
                 {/* Redirect root to signup for new users */}
-                <Route path="/" element={
-                  <ProtectedRoute>
-                    <Index />
-                  </ProtectedRoute>
-                } />
+                <Route path="/" element={currentUser ? <Navigate to="/dashboard" /> : <Navigate to="/login" />} />
                 
                 {/* Auth routes */}
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<SignUp />} />
+
+                <Route path="/dashboard" element={currentUser ? <Index /> : <Navigate to="/login" />} />
                 
                 {/* Protected routes */}
                 <Route path="/portfolio" element={

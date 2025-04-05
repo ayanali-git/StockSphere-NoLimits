@@ -3,12 +3,12 @@ import { getAuth } from "firebase/auth";
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBCJbFWesbsiKwMDKIiXViMeakUBfw8OKc",
-  authDomain:  "stocksp-c9aa5.firebaseapp.com",
-  projectId:  "stocksp-c9aa5",
-  storageBucket:  "stocksp-c9aa5.firebasestorage.app",
-  messagingSenderId:  "1043014563460",
-  appId:  "1:1043014563460:web:a2ab30bb5c09d2edfa34d1"
+  apiKey: "AIzaSyB_b9WhUnjbCdyz9XM-c8iX1fNRtg4hhdE",
+  authDomain:  "stock-sphere-f0360.firebaseapp.com",
+  projectId:  "stock-sphere-f0360",
+  storageBucket:  "stock-sphere-f0360.firebasestorage.app",
+  messagingSenderId:  "691104941409",
+  appId:  "1:691104941409:web:752422cb0cc313323fb120"
 };
 
 // Initialize Firebase
